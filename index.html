@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exchange Currencies</title>
+  <!-- Main css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Fonts awesome -->
+  <script src="https://kit.fontawesome.com/5a1527845b.js" crossorigin="anonymous"></script>
+  <!-- Money.js file -->
+  <!-- <script src="path/to/money.js"></script> -->
+</head>
+
+<body>
+
+  <div class="error-messages"></div>
+
+  <!-- Header [Start] -->
+  <header>
+    <div class="top">
+      <div class="container">
+        <div class="info">
+          <div>
+            <a href="#">Telegram-bot</a>
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <div class="sign-in">
+            <i class="fa-solid fa-user"></i>
+            <a href="#">Sign in</a>
+          </div>
+          <a href="#">Sign up</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="">
+          </a>
+        </div>
+
+        <div class="box">
+          <nav>
+            <ul>
+              <li><a href="index.html">Start an exchange</a></li>
+              <li><a href="#">Reserves</a></li>
+              <li><a href="#">For partners</a></li>
+              <li><a href="#">Guarantees</a></li>
+              <li><a href="#">Rules</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Contents</a></li>
+            </ul>
+          </nav>
+
+          <nav class="mobile">
+            <button type="button">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul>
+              <li><a href="index.html">Start an exchange</a></li>
+              <li><a href="#">Reserves</a></li>
+              <li><a href="#">For partners</a></li>
+              <li><a href="#">Guarantees</a></li>
+              <li><a href="#">Rules</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Contents</a></li>
+            </ul>
+          </nav>
+
+          <div class="img">
+            <img src="images/ghr.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header [End] -->
+
+
+
+
+  <!-- Main [Start] -->
+  <main>
+    <div class="container">
+      <h2 class="exchange-to">
+        <span class="from">Bitcoin</span> to
+        <span class="to">Bank account RUB</span>
+      </h2>
+
+      <div class="sections">
+        <section class="send-section">
+          <h3>You send</h3>
+          <div class="input">
+            <input id="input-from" type="text" placeholder="0">
+            <label class="type-currency"></label>
+          </div>
+          <div class="input search-inp">
+            <input id="search-cur-from" type="text" placeholder="Search">
+          </div>
+
+          <div class="currencies"></div>
+        </section>
+
+
+        <section class="get-section">
+          <h3>You get</h3>
+          <div class="input">
+            <input disabled id="input-to" type="text" placeholder="0">
+            <label class="type-currency"></label>
+          </div>
+          <div class="input search-inp">
+            <input id="search-cur-to" type="text" placeholder="Search">
+          </div>
+
+          <div class="currencies"></div>
+        </section>
+
+        <form>
+          <!--! You stopped here -->
+        </form>
+      </div>
+    </div>
+  </main>
+  <!-- Main [End] -->
+
+
+
+
+  <!-- Footer [Start] -->
+  <footer>
+    <div class="container">
+      <div class="top">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="">
+          </a>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Start an exchange</a></li>
+            <li><a href="#">Reserves</a></li>
+            <li><a href="#">For partners</a></li>
+            <li><a href="#">Guarantees</a></li>
+            <li><a href="#">Rules</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contents</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="bottom">
+        <div class="copy-right">
+          <span>&copy; 2019 - <span class="current-year">2023</span>,</span>
+          <span class="website-name">Royal.Cash</span>
+        </div>
+
+        <div class="contact">
+          <div class="img">
+            <img src="images/bestchange.png" alt="">
+          </div>
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer [End] -->
+  <script src="script.js"></script>
+</body>
+
+</html>
