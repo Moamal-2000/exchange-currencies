@@ -15,12 +15,9 @@
     rel="stylesheet">
   <!-- Fonts awesome -->
   <script src="https://kit.fontawesome.com/5a1527845b.js" crossorigin="anonymous"></script>
-  <!-- Money.js file -->
-  <!-- <script src="path/to/money.js"></script> -->
 </head>
 
 <body>
-
   <div class="error-messages"></div>
 
   <!-- Header [Start] -->
@@ -112,6 +109,55 @@
         </section>
 
 
+        <section class="form-section">
+          <h3>Exchange details</h3>
+          <form>
+            <div class="input">
+              <label for="email">Your E-mail</label>
+              <input id="email" type="email" placeholder="jasper@outlook.com" required>
+            </div>
+
+            <div class="input">
+              <label for="wallet">To your wallet</label>
+              <input type="text" placeholder="For example: B71222608" required>
+            </div>
+
+            <div class="input">
+              <label for="coupon">Coupon</label>
+              <input type="text" placeholder="Coupon Code (if (available))">
+            </div>
+
+            <input type="submit" value="Go to the exchange">
+
+            <div class="checkboxes">
+              <div class="checkbox">
+                <input type="checkbox" id="rules">
+                <div class="custom-checkbox rules">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <label for="rules">
+                  I agree with
+                  <a href="#">the rules of the exchange</a>
+                  and
+                  <a href="#">AML/KYC</a>
+                </label>
+              </div>
+
+              <div class="checkbox">
+                <input type="checkbox" id="bonuse">
+                <div class="custom-checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <label for="bonuse">
+                  Use bonuses: 0.
+                  <a href="#">In detail</a>
+                </label>
+              </div>
+            </div>
+          </form>
+        </section>
+
+
         <section class="get-section">
           <h3>You get</h3>
           <div class="input">
@@ -124,10 +170,6 @@
 
           <div class="currencies"></div>
         </section>
-
-        <form>
-          <!--! You stopped here -->
-        </form>
       </div>
     </div>
   </main>
