@@ -5,7 +5,8 @@ const headerBottom = document.querySelector("header .bottom");
 const mobileNav = document.querySelector(".bottom nav.mobile i");
 const currenciesContainers = document.querySelectorAll("main .sections section .currencies");
 const exchangeToText = document.querySelector("main .exchange-to");
-const typeCurrLabels = document.querySelectorAll("main .sections section .input label");
+const typeCurrLabelFrom = document.querySelector("main .sections .send-section .input label");
+const typeCurrLabelTo = document.querySelector("main .sections .get-section .input label");
 const exchangeInput = document.querySelector("main .sections .send-section .input input");
 const exchangeOutput = document.querySelector("main .sections .get-section .input input");
 const searchInputFrom = document.querySelector("#search-cur-from");
@@ -70,6 +71,8 @@ function createCurrStructure(data) {
 }
 
 function handleCurrClick(currEle) {
+  exchangeInput.removeAttribute('disabled')
+
   let currencies = [...currEle.parentElement.children];
 
   // Add active class to clicked currency
@@ -85,7 +88,7 @@ function handleCurrClick(currEle) {
   });
 
   // Update message exchange from to
-  exchangeToText.textContent = `${typeCurrLabels[0].textContent} to ${typeCurrLabels[1].textContent}`;
+  exchangeToText.textContent = `${typeCurrLabelFrom.textContent} to ${typeCurrLabelTo.textContent}`;
   exchangeToText.style.visibility = "visible";
 
   const exchangeInp =
@@ -110,16 +113,18 @@ function handlePatternExchangeInp(inp) {
 }
 
 function handleCurrenciesExchange(inp) {
-  if (!inp.value) return
-
-  const nameCurrFrom = typeCurrLabels[0].textContent;
-  const nameCurrTo = typeCurrLabels[1].textContent;
-
+  
+  const nameCurrFrom = typeCurrLabelFrom.textContent;
+  const nameCurrTo = typeCurrLabelTo.textContent;
+  
   // If currencies are the same
   if (nameCurrFrom === nameCurrTo && limitationMessages >= 0) {
     showErrorMsg();
+    exchangeInput.setAttribute('disabled', '')
     return;
   }
+
+  if (!inp.value) return
 
   async function showResultExchange(inp) {
     const res = await fetch(apiCurr);
@@ -129,11 +134,9 @@ function handleCurrenciesExchange(inp) {
       let currValue = parseFloat(data.rates[currName]);
 
       if (nameCurrFrom === currName) {
-        console.log(inp.value);
         let inpValue = parseFloat(inp.value);
 
         let resultExchange = (inpValue * currValue).toFixed(3);
-        console.log(inpValue);
         exchangeOutput.value = resultExchange;
       }
     }
